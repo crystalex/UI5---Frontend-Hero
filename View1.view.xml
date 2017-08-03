@@ -1,0 +1,16 @@
+<mvc:View 
+	controllerName="com.sap.ui5.training.destination.test.destination_test.controller.View1" 
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" 
+	displayBlock="true" 
+	xmlns="sap.m">
+	<App id="app">
+		<pages>
+			<Page id="mainPage" title="{i18n>Frontend Hero Alex}">
+				<content>
+					<Text id="helloWorldText" text="{view1Model>/helloWorldText/text}" />
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>
