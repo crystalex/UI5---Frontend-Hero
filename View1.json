@@ -1,5 +1,33 @@
 {
-	"helloWorldText" :{
+	"helloWorldText": {
 		"text": "Hello World training"
+	},
+	"statusComboBox": {
+		"labelText": "Status",
+		"comboItems": [{
+			"key": 1,
+			"value": "New"
+		}, {
+			"key": 2,
+			"value": "Pending"
+		}, {
+			"key": 3,
+			"value": "Confirmed"
+		}]
+	},
+	"table1": {
+		"items": [{
+			"name": "Produs 1",
+			"price": "10",
+			"currency": "RON"
+		}, {
+			"name": "Produs 2",
+			"price": "20",
+			"currency": "EUR"
+		}, {
+			"name": "Produs 3",
+			"price": "30",
+			"currency": "USD"
+		}]
 	}
 }
