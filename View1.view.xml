@@ -1,14 +1,54 @@
-<mvc:View 
-	controllerName="com.sap.ui5.training.destination.test.destination_test.controller.View1" 
-	xmlns:html="http://www.w3.org/1999/xhtml"
-	xmlns:mvc="sap.ui.core.mvc" 
-	displayBlock="true" 
-	xmlns="sap.m">
+<mvc:View controllerName="com.sap.ui5.training.destination.test.destination_test.controller.View1" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" displayBlock="true" xmlns="sap.m"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
 	<App id="app">
 		<pages>
 			<Page id="mainPage" title="{i18n>Frontend Hero Alex}">
 				<content>
-					<Text id="helloWorldText" text="{view1Model>/helloWorldText/text}" />
+					<Text id="helloWorldText" text="{view1Model>/helloWorldText/text}"/>
+					<VBox class="sapUIResponsiveMargin" width="auto">
+						<Label id="statusLabel" text="{view1Model>/statusComboBox/labelText}" labelFor="StatusCombo"/>
+						<ComboBox id="statusCombo"
+							items="{ path: 'view1Model>/statusComboBox/comboItems', sorter: { path: 'key' } , filters:[{ path: 'key', operator: 'NE', value1:2 }] }">
+							<core:Item key="{view1Model>key}" text="{view1Model>key}-{view1Model>value}"/>
+						</ComboBox>
+						<Button id="myButton" text="click me" app:mydata="textnou" press="onMyButtonPress"/>
+					</VBox>
+					<!--items="{view1Model>/table1/items}" -->
+					<Table id="table1" items="{odatamodel>/Products}" width="auto" growing="true" growingThreshold="10"
+						class="sapUiForceWidthAuto sapUiMediumMarginBeginEnd">
+				  <!-- 	<Table id="table1" items="{view1Model>/table1/items}" width="auto" growing="true" growingThreshold="10"-->
+						<!--class="sapUiForceWidthAuto sapUiMediumMarginBeginEnd">-->
+						<headerToolbar>
+							<OverflowToolbar id="otbSubheader">
+								<Title text="Products" level="H2"/>
+								<ToolbarSpacer/>
+								<Button id="loadButton" text="Load Data" type="Emphasized" press="onLoadData"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<Text text="Product"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Price"/>
+							</Column>
+							<Column minScreenWidth="Tablet" demandPopin="true">
+								<Text text="Currency"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<!--<Text text="{view1Model>name}"/>-->
+									<!--<Text text="{view1Model>price}"/>-->
+									<!--<Text text="{view1Model>currency}"/>-->
+									<Text text="{odatamodel>ProductName}"/>
+									<Text text="{odatamodel>UnitPrice}"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
 				</content>
 			</Page>
 		</pages>
