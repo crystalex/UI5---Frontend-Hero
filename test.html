@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Unit tests for Master Detail example</title>
+		<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+		<meta charset="UTF-8">
+
+		<script id="sap-ui-bootstrap"
+			src="../../resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-resourceroots='{"com.sap.ui5.training.destination.test.destination_test": "./"}'>
+		</script>
+
+	    <link rel="stylesheet" href="../../resources/sap/ui/thirdparty/qunit.css" type="text/css" media="screen" />
+	    <script type="text/javascript" src="../../resources/sap/ui/thirdparty/qunit.js"></script>
+	    <script type="text/javascript" src="../../resources/sap/ui/qunit/qunit-junit.js"></script>
+	    <script type="text/javascript" src="../../resources/sap/ui/qunit/QUnitUtils.js"></script>
+    
+    	<script type="text/javascript" src="util/prettyDate.js"></script>
+    
+		<script>
+
+			//QUnit.config.autostart = false;
+			
+			QUnit.test(" util/prettyDate - basic tests", function(assert){
+			
+				var now = '2017/08/08 11:00:00';
+				assert.equal(prettyDate(now, '2017/08/08 10:00:00'), "just now");
+			});
+
+		</script>
+
+	</head>
+	<body>
+		<div id="qunit"></div>
+		<div id="qunit-fixture"></div>
+		<div id="myContent"></div>
+	</body>
+</html>
