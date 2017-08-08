@@ -1,0 +1,125 @@
+{
+	"_version": "1.5.0",
+	"sap.app": {
+		"id": "com.sap.ui5.training.destination.test.destination_test",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.38.11"
+		},
+		"dataSources": {
+			"view1ModelDs": {
+				"uri": "viewModel/View1.json",
+				"type": "JSON"
+			},
+			"odata_ds": {
+				"uri": "/northwind",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0"
+				}
+			}
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal",
+			"sap_belize"
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "com.sap.ui5.training.destination.test.destination_test.view.View1",
+			"type": "XML",
+			"id": "View1"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "com.sap.ui5.training.destination.test.destination_test.i18n.i18n"
+				}
+			},
+			"view1Model": {
+				"type": "sap.ui.model.json.JSONModel",
+				"dataSource": "view1ModelDs"
+			},
+			"odatamodel": {
+				"type": "sap.ui.model.odata.ODataModel",
+				"dataSource": "odata_ds"
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "com.sap.ui5.training.destination.test.destination_test.view",
+				"controlId": "app",
+				"controlAggregation": "pages"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "view1",
+				"target": "view1"
+				},
+		{
+		  "pattern": "detail",
+		  "name": "detail",
+		  "target": "detail"
+		
+			}],
+			"targets": {
+				"view1": {
+					"viewName": "View1"
+				}
+			},
+				"view2": {
+					"viewName": "View2"
+				}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}
