@@ -1,5 +1,23 @@
 {
-	"helloWorldText" :{
+	"helloWorldText": {
 		"text": "Hello World training"
+	},
+	"supplierComboBox": {
+
+	},
+	"table1": {
+		"items": [{
+			"name": "Produs 1",
+			"price": "10",
+			"currency": "RON"
+		}, {
+			"name": "Produs 2",
+			"price": "20",
+			"currency": "EUR"
+		}, {
+			"name": "Produs 3",
+			"price": "30",
+			"currency": "USD"
+		}]
 	}
 }
