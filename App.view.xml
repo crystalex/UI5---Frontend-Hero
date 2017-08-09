@@ -1,0 +1,6 @@
+<mvc:View controllerName="com.sap.ui5.training.destination.test.destination_test.controller.App" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" displayBlock="true" xmlns="sap.m"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<App id="app">
+			</App>
+		</mvc:View> 
